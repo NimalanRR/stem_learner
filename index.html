@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEM Learner | Learn. Build. Explore.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <nav class="navbar">
+        <a class="logo" href="#home" aria-label="STEM Learner home">
+            <span class="logo-mark">⚛</span>
+            <span><b>STEM</b> Learner</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#subjects">Subjects</a>
+            <a href="#courses">Courses</a>
+            <a href="#projects">Projects</a>
+            <a href="#quizzes">Quizzes</a>
+            <a href="#about">About</a>
+        </div>
+
+        <div class="nav-actions">
+            <button class="icon-btn" id="themeToggle" title="Toggle theme">☀️</button>
+            <button class="login-btn" id="loginButton">Login</button>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="tagline">🚀 LEARN • BUILD • EXPLORE</p>
+            <h1>Discover the <span>Future</span> with STEM</h1>
+            <p class="hero-text">
+                Learn Science, Technology, Engineering and Mathematics through
+                interactive lessons, creative projects and fun challenges.
+            </p>
+            <div class="hero-buttons">
+                <button class="primary-btn" id="startLearning">Start Learning →</button>
+                <button class="secondary-btn" id="exploreProjects">Explore Projects</button>
+            </div>
+
+            <div class="stats">
+                <div><strong id="courseCount">0</strong><span>Courses</span></div>
+                <div><strong id="projectCount">0</strong><span>Projects</span></div>
+                <div><strong id="quizCount">0</strong><span>Quizzes</span></div>
+            </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="floating-card card-science">🔬<span>Science</span></div>
+            <div class="floating-card card-tech">💻<span>Technology</span></div>
+            <div class="floating-card card-engineering">⚙️<span>Engineering</span></div>
+            <div class="floating-card card-math">📐<span>Math</span></div>
+            <div class="hero-bulb">💡</div>
+        </div>
+    </section>
+
+    <section class="section" id="subjects">
+        <p class="section-label">WHAT YOU CAN LEARN</p>
+        <h2>Explore STEM</h2>
+        <p class="section-description">Choose a subject and start exploring.</p>
+
+        <div class="subject-grid" id="subjectGrid"></div>
+    </section>
+
+    <section class="section alt" id="courses">
+        <p class="section-label">LEARNING PATHS</p>
+        <h2>Featured Courses</h2>
+        <p class="section-description">Learn at your own pace and track your progress.</p>
+
+        <div class="filter-row" id="courseFilters">
+            <button class="filter-btn active" data-filter="All">All</button>
+            <button class="filter-btn" data-filter="Science">Science</button>
+            <button class="filter-btn" data-filter="Technology">Technology</button>
+            <button class="filter-btn" data-filter="Engineering">Engineering</button>
+            <button class="filter-btn" data-filter="Mathematics">Mathematics</button>
+        </div>
+
+        <div class="course-grid" id="courseGrid"></div>
+    </section>
+
+    <section class="section" id="projects">
+        <p class="section-label">LEARN BY DOING</p>
+        <h2>STEM Projects</h2>
+        <p class="section-description">Build something, follow the steps and mark it complete.</p>
+        <div class="project-grid" id="projectGrid"></div>
+    </section>
+
+    <section class="section alt" id="quizzes">
+        <p class="section-label">TEST YOUR KNOWLEDGE</p>
+        <h2>Quick Quizzes</h2>
+        <p class="section-description">Answer questions and earn points.</p>
+        <div class="quiz-grid" id="quizGrid"></div>
+    </section>
+
+    <section class="section dashboard" id="dashboard">
+        <p class="section-label">YOUR LEARNING</p>
+        <h2>Progress Dashboard</h2>
+        <div class="progress-box">
+            <div class="progress-ring" id="progressRing"><span id="progressPercent">0%</span></div>
+            <div>
+                <h3 id="welcomeText">Welcome, Learner!</h3>
+                <p><span id="completedCount">0</span> courses completed</p>
+                <p><span id="pointsCount">0</span> quiz points earned</p>
+                <button class="secondary-btn" id="resetProgress">Reset Progress</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="about">
+        <h2>Ready to become a STEM Learner?</h2>
+        <p>Start with a course, build a project and challenge yourself with a quiz.</p>
+        <button class="primary-btn" id="ctaStart">Start Learning 🚀</button>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-logo">⚛ <b>STEM</b> Learner</div>
+    <p>Learn. Build. Explore.</p>
+    <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#projects">Projects</a>
+        <a href="#quizzes">Quizzes</a>
+        <a href="#dashboard">Progress</a>
+    </div>
+    <p class="copyright">© 2026 STEM Learner</p>
+</footer>
+
+<div class="modal hidden" id="contentModal">
+    <div class="modal-card">
+        <button class="modal-close" data-close="contentModal">×</button>
+        <div id="modalContent"></div>
+    </div>
+</div>
+
+<div class="modal hidden" id="loginModal">
+    <div class="modal-card small">
+        <button class="modal-close" data-close="loginModal">×</button>
+        <h2>Welcome to STEM Learner</h2>
+        <p>Enter a display name to save your progress on this device.</p>
+        <input id="nameInput" class="text-input" type="text" maxlength="30" placeholder="Your name">
+        <button class="primary-btn full" id="saveName">Continue</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
